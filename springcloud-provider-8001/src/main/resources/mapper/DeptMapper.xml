@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.hdxy.springcloud.dao.DeptDao">
+    <insert id="create" parameterType="Dept" useGeneratedKeys="true" keyProperty="id">
+        insert into dept (dname,db_source) values (#{dname},'db01');
+    </insert>
+    <select id="getDeptById" parameterType="long" resultType="Dept">
+        select * from dept where deptno=#{deptno};
+    </select>
+</mapper>
